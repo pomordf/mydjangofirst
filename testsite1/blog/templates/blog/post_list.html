@@ -9,19 +9,13 @@
       <h1><a href="/">Blogen<a></h1>
     </div>
 
-    <div>
-      <p>published: 01.01.01, 01:01</p>
-      <h2><a href="">My first post</a></h2>
-      <p>мой первый пост мой первй пост мой первый пост мой первый пост</p>
-      <p> </p>
-    </div>
+    {% for post in posts %}
+      <div>
+        <p> published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
 
-
-    <div>
-      <p>published: 01.01.01, 01:02</p>
-      <h2><a href="">My second post</a></h2>
-      <p>мой второй пост мой второй пост мой второй пост</p>
-      <p> </p>
-    </div>
   </body>
 </html>
